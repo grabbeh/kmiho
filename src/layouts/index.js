@@ -1,0 +1,46 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import Header from '../components/Header'
+import './index.css'
+
+const Layout = ({ children }) => (
+  <div>
+    <Helmet
+      meta={[
+        { name: 'description', content: 'Sample' },
+        { name: 'keywords', content: 'sample, something' }
+      ]}
+    >
+      <link
+        rel='stylesheet'
+        href='https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css'
+      />
+      <link
+        href='https://fonts.googleapis.com/css?family=Libre+Baskerville'
+        rel='stylesheet'
+      />
+      <link
+        href='https://fonts.googleapis.com/css?family=Lato'
+        rel='stylesheet'
+      />
+      <link
+        rel='stylesheet'
+        href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'
+        integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp'
+        crossorigin='anonymous'
+      />
+    </Helmet>
+    <Header />
+    <div className='dark-gray pa3'>
+      {children()}
+    </div>
+
+  </div>
+)
+
+Layout.propTypes = {
+  children: PropTypes.func
+}
+
+export default Layout
