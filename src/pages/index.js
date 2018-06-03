@@ -28,7 +28,7 @@ class IndexPage extends Component {
       <div className='relative'>
         <div className='lh-title
             kblue
-            ph6-l
+            w-75
             baskeville
             center
             pv6-ns

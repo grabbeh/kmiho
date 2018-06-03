@@ -16,8 +16,7 @@ class Footer extends Component {
   render () {
     const { creative, hoverImage, endHover } = this.props
     const { showMenu } = this.state
-    const topRow = creative.slice(0, 4)
-    const bottomRow = creative.slice(4, creative.length)
+
     return (
       <div>
         <div onClick={this.toggle} className='lato ttu tc ph3 mb3 dn-l dn-m'>
@@ -29,50 +28,28 @@ class Footer extends Component {
           className={cn(
             !showMenu && 'dn',
             'db-ns',
-            'ml4',
-            'center',
-            'tc',
-            'ph6-l',
             'lato',
             'tracked',
             'bg-white'
           )}
         >
-          <div className='cf'>
-            <ul className='cf list ml5-ns ml0 mv0 pa0'>
-              {topRow.map(c => (
-                <li
-                  onMouseOver={() => {
-                    hoverImage(c.image)
-                  }}
-                  onMouseOut={endHover}
-                  key={c.name}
-                  className='fl mr3'
-                >
-                  <Link className='strike-hover ttu link dark-gray' to={c.link}>
-                    {c.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <ul className='cf list ml5-ns pl5-l pl0-m pl0 ml0 mv0 pa0'>
-              {bottomRow.map(c => (
-                <li
-                  onMouseOver={() => {
-                    hoverImage(c.image)
-                  }}
-                  onMouseOut={endHover}
-                  key={c.name}
-                  className='fl mr3 mt1'
-                >
-                  <Link className='strike-hover ttu link dark-gray' to={c.link}>
-                    {c.name}
-                  </Link>
-                </li>
-              ))}
-
-            </ul>
+          <div className='w-80 center flex flex-wrap justify-center'>
+            {creative.map(c => (
+              <div
+                onMouseOver={() => {
+                  hoverImage(c.image)
+                }}
+                onMouseOut={endHover}
+                className='tc mr3 heavy pv1'
+                key={c.name}
+              >
+                <Link className='strike-hover ttu link dark-gray' to={c.link}>
+                  {c.name}
+                </Link>
+              </div>
+            ))}
           </div>
+
         </div>
       </div>
     )
