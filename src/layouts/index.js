@@ -9,11 +9,7 @@ const Layout = ({ children }) => (
     <Helmet
       meta={[
         { name: 'description', content: 'Graphic designer' },
-        { name: 'keywords', content: 'designer, graphic designer, london' },
-        {
-          name: 'google-site-verification',
-          content: '1DIibYM_1DiLLMYMmVLaMjBuPdi0XB_QBXJR0-tlPbY'
-        }
+        { name: 'keywords', content: 'designer, graphic designer, london' }
       ]}
     >
 

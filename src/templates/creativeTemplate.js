@@ -19,7 +19,7 @@ class Template extends React.Component {
 
   hideTitle = () => {
     let { showTitle } = this.state
-    window.scrollY > 150
+    window.scrollY > 25
       ? this.setState({ showTitle: false })
       : this.setState({ showTitle: true })
   }
@@ -29,7 +29,7 @@ class Template extends React.Component {
   }
 
   scrollTo = () => {
-    scroll.scrollTo(275)
+    scroll.scrollTo(30)
   }
 
   componentWillUnmount () {
@@ -44,32 +44,44 @@ class Template extends React.Component {
     const { scrollTo } = this
     return (
       <div>
-        <div>
-          <div
-            className={cn(!showTitle && 'hide', 'pt5', 'center', 'mw6', 'tc')}
-          >
-            <div onClick={() => scrollTo()}>
-              <div className='tracked lato ttu heavy pointer'>
-                {frontmatter.title}
+        <div className='mt6'>
+          {frontmatter.images.map(i => (
+            <Fade key={i} hide={showTitle}>
+              <div className='center w-75'>
+                <img src={withPrefix(i)} />
               </div>
-              <div
-                className='baskeville heavy lh-copy mt4'
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
-              <div className='mv2'>
-                <i className='kblue pointer fa fa-angle-down fa-2x' />
+            </Fade>
+          ))}
+        </div>
+        <div>
+          <div>
+            <div
+              className={cn(
+                !showTitle && 'hide',
+                'absolute',
+                'top-2',
+                'pt5',
+                'center-image',
+                'mw6',
+                'tc'
+              )}
+            >
+              <div onClick={() => scrollTo()}>
+                <div className='tracked lato ttu heavy pointer'>
+                  {frontmatter.title}
+                </div>
+                <div
+                  className='baskeville heavy lh-copy mt4'
+                  dangerouslySetInnerHTML={{ __html: html }}
+                />
+                <div className='mv2'>
+                  <i className='kblue pointer fa fa-angle-down fa-2x' />
+                </div>
               </div>
             </div>
           </div>
-          <div>
-            {frontmatter.images.map(i => (
-              <Fade key={i} hide={showTitle}>
-                <div className='center mw6'> <img src={withPrefix(i)} /></div>
-              </Fade>
-            ))}
-          </div>
+          <Footer creative={data.site.siteMetadata.creative} />
         </div>
-        <Footer creative={data.site.siteMetadata.creative} />
       </div>
     )
   }

@@ -7,7 +7,7 @@ class IndexPage extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      imageUrl: false
+      imageUrl: null
     }
   }
 
@@ -27,22 +27,21 @@ class IndexPage extends Component {
     return (
       <div>
         <Fade hide={!imageUrl}>
-          <div className='center'>
+          <div>
             <img
               className={cn(!imageUrl && 'dn', 'center-image')}
               src={imageUrl}
             />
           </div>
         </Fade>
-
-        <div className='relative'>
+        <div>
           <div className='lh-title
             kblue
             w-75
             baskeville
             center
             pv6-ns
-            mv3
+            mv4
             f2
             tc'>
             <Fade hide={imageUrl}>
