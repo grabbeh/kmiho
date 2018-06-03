@@ -8,10 +8,15 @@ const Layout = ({ children }) => (
   <div>
     <Helmet
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
+        { name: 'description', content: 'Graphic designer' },
+        { name: 'keywords', content: 'designer, graphic designer, london' },
+        {
+          name: 'google-site-verification',
+          content: '1DIibYM_1DiLLMYMmVLaMjBuPdi0XB_QBXJR0-tlPbY'
+        }
       ]}
     >
+
       <link
         rel='stylesheet'
         href='https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css'

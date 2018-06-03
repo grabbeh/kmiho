@@ -13,10 +13,10 @@ class Footer extends Component {
   toggle = () => {
     this.setState({ showMenu: !this.state.showMenu })
   }
+
   render () {
     const { creative, hoverImage, endHover } = this.props
     const { showMenu } = this.state
-
     return (
       <div>
         <div onClick={this.toggle} className='lato ttu tc ph3 mb3 dn-l dn-m'>
@@ -40,7 +40,7 @@ class Footer extends Component {
                   hoverImage(c.image)
                 }}
                 onMouseOut={endHover}
-                className='tc mr3 heavy pv1'
+                className='tc mr3-ns mr0 heavy pv1'
                 key={c.name}
               >
                 <Link className='strike-hover ttu link dark-gray' to={c.link}>
@@ -49,7 +49,6 @@ class Footer extends Component {
               </div>
             ))}
           </div>
-
         </div>
       </div>
     )

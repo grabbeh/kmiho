@@ -25,43 +25,38 @@ class IndexPage extends Component {
     const { hoverImage, endHover } = this
 
     return (
-      <div className='relative'>
-        <div className='lh-title
+      <div>
+        <Fade hide={!imageUrl}>
+          <div className='center'>
+            <img
+              className={cn(!imageUrl && 'dn', 'center-image')}
+              src={imageUrl}
+            />
+          </div>
+        </Fade>
+
+        <div className='relative'>
+          <div className='lh-title
             kblue
             w-75
             baskeville
             center
             pv6-ns
-            mt5
-            mb4
+            mv3
             f2
             tc'>
-          <Fade hide={imageUrl}>
-            <span>
-              Hi I'm Katie, a creative designer living and working in London.
-            </span>
-          </Fade>
-          <Fade hide={!imageUrl}>
-            <div>
-              <img
-                className={cn(
-                  !imageUrl && 'dn',
-                  'h-75',
-                  'absolute',
-                  'top-0',
-                  'image-left-ns',
-                  'left-zero'
-                )}
-                src={imageUrl}
-              />
-            </div>
-          </Fade>
+            <Fade hide={imageUrl}>
+              <span>
+                Hi I'm Katie, a creative designer living and working in London.
+              </span>
+            </Fade>
+          </div>
+          <Footer
+            hoverImage={hoverImage}
+            endHover={endHover}
+            creative={data.site.siteMetadata.creative}
+          />
         </div>
-        <Footer
-          hoverImage={hoverImage}
-          endHover={endHover}
-          creative={data.site.siteMetadata.creative}
-        />
       </div>
     )
   }
