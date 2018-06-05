@@ -36,7 +36,7 @@ const Layout = ({ children, location: { pathname } }) => (
         crossorigin='anonymous'
       />
     </Helmet>
-    <div className='ph5-ns mt2 pt4-ns pa3'>
+    <div className='ph5-ns ph4-m mt2 pt4-ns pa3'>
       <Header activePath={pathname} />
       <div className='dark-gray'>
         {children()}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { withPrefix } from 'gatsby-link'
 
-import Footer from '../components/CreativeFooter'
+import Footer from '../components/Footer'
 
 class Template extends React.Component {
   render () {

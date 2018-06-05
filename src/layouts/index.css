@@ -24,9 +24,14 @@
     visibility: hidden;
   }
   
-  .front {
+  .primary-front {
     z-index: 9999;
   }
+
+  .secondary-front {
+    z-index: 2;
+  }
+
   .back {
     z-index: 1;
   }

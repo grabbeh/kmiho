@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import cn from 'classnames'
-import Fade from '../components/Fade'
 import Menu from '../components/Menu'
 
 class Header extends Component {
@@ -26,9 +25,8 @@ class Header extends Component {
     const { open, close } = this
     return (
       <div>
-        {showMenu &&
-          <Menu activePath={activePath} close={close} showMenu={showMenu} />}
-        <div className='mb4 cf w-100 f4 tracked front baskeville bg-white'>
+        <Menu close={close} showMenu={showMenu} />
+        <div className='mb4 cf w-100 f4 tracked primary-front baskeville bg-white'>
           <Link className='fl link dark-gray' to='/'>
             Katie Mihailovits
           </Link>
@@ -38,22 +36,22 @@ class Header extends Component {
           <div className='f5 heavy dn dib-ns fr'>
             <Link
               className={cn(
-                activePath === '/contact' && 'black',
-                activePath !== '/contact' && 'light-gray',
+                activePath === '/about' && 'dark-gray',
+                activePath !== '/about' && 'gray',
                 'hover-black',
                 'lato',
                 'fr',
                 'ttu',
                 'link'
               )}
-              to='/contact'
+              to='/about'
             >
               Contact
             </Link>
             <Link
               className={cn(
-                activePath === '/' && 'black',
-                activePath !== '/' && 'light-gray',
+                activePath === '/' && 'dark-gray',
+                activePath !== '/' && 'gray',
                 'lato',
                 'hover-black',
                 'fr',
