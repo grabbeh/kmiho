@@ -2,11 +2,7 @@ import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import cn from 'classnames'
 
-class Footer extends Component {
-  render () {
-    const { creative, activePath } = this.props
-    console.log(activePath)
-    return (
+const Footer = ({creative, activePath}) => (
       <div>
         <div className='tracked lato w-80 center flex flex-wrap justify-center'>
           {creative.map(c => (
@@ -29,7 +25,7 @@ class Footer extends Component {
 
       </div>
     )
-  }
-}
+  
+
 
 export default Footer
