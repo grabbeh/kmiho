@@ -3,29 +3,21 @@
     font-family: 'Libre Baskerville', serif;
   }
 
-  .center-image { 
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    position: absolute;
-    height: 350px;
-  }
-
   .lato {
     font-family: 'Lato', sans-serif;
-    font-size: 13px;
+    
   }
 
   .heavy {
     font-weight: 900;
   }
+
+  img {
+    object-fit: cover;
+  }
   
   .kblue {
     color: #2badc2
-  }
-
-  .strike-hover:hover {
-    text-decoration: line-through;
   }
 
   .hide {
@@ -39,16 +31,9 @@
     z-index: 1;
   }
 
-
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
-  }
-}
-
 @media screen and (min-width: 30em) {
-  .image-left-ns {
-    left: 30%;
+  .dn-ns {
+    display: none;
   }
 }
 

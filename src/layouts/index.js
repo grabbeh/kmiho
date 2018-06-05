@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Header from '../components/Header'
 import './index.css'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location: { pathname } }) => (
   <div>
     <Helmet
       meta={[
@@ -36,9 +36,11 @@ const Layout = ({ children }) => (
         crossorigin='anonymous'
       />
     </Helmet>
-    <Header />
-    <div className='dark-gray pa3'>
-      {children()}
+    <div className='ph5-ns mt2 pt4-ns pa3'>
+      <Header activePath={pathname} />
+      <div className='dark-gray'>
+        {children()}
+      </div>
     </div>
 
   </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Footer from '../components/HomeFooter'
-import Fade from '../components/Fade'
 import cn from 'classnames'
+import Link from 'gatsby-link'
 
 class IndexPage extends Component {
   constructor (props) {
@@ -21,41 +21,33 @@ class IndexPage extends Component {
 
   render () {
     const { data } = this.props
-    const { imageUrl } = this.state
-    const { hoverImage, endHover } = this
+    const { creative } = data.site.siteMetadata
 
     return (
       <div>
-        <Fade hide={!imageUrl}>
-          <div>
-            <img
-              className={cn(!imageUrl && 'dn', 'center-image')}
-              src={imageUrl}
-            />
+        {creative.map((c, index) => (
+          <div key={c.name} className='w-50-ns w-100 fl overflow-hidden'>
+            <div
+              className={cn(
+                (index + 1) % 2 === 0 && 'mr0-ns',
+                (index + 1) % 2 !== 0 && 'mr4-ns',
+                'mb4'
+              )}
+            >
+              <div>
+                <Link className='dim' to={c.link}>
+                  <img
+                    style={{ height: '50vh' }}
+                    className='w-100 img'
+                    src={c.image}
+                  />
+                </Link>
+              </div>
+              <div className='cf' />
+            </div>
           </div>
-        </Fade>
-        <div>
-          <div className='lh-title
-            kblue
-            w-75
-            baskeville
-            center
-            pv6-ns
-            mv4
-            f2
-            tc'>
-            <Fade hide={imageUrl}>
-              <span>
-                Hi I'm Katie, a creative designer living and working in London.
-              </span>
-            </Fade>
-          </div>
-          <Footer
-            hoverImage={hoverImage}
-            endHover={endHover}
-            creative={data.site.siteMetadata.creative}
-          />
-        </div>
+        ))}
+        <Footer creative={data.site.siteMetadata.creative} />
       </div>
     )
   }
