@@ -26,7 +26,7 @@ const IndexPage = ({ data: { allContentfulCreative: { edges } } }) => {
                 <img
                   style={{ height: '50vh' }}
                   className='w-100 img'
-                  src={headerImage.url}
+                  src={headerImage.file.url}
                 />
               </Link>
             </div>
