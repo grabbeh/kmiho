@@ -6,13 +6,6 @@ module.exports = {
   pathPrefix: `/public`,
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/markdown`,
-        name: 'markdown-pages'
-      }
-    },
-    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `${process.env.SPACE_ID}`,
