@@ -1,3 +1,5 @@
+var contentful = require('./config/contentful.js')
+
 module.exports = {
   pathPrefix: `/public`,
   siteMetadata: {
@@ -38,6 +40,13 @@ module.exports = {
       options: {
         path: `${__dirname}/markdown`,
         name: 'markdown-pages'
+      }
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `${contentful.spaceId}`,
+        accessToken: `${contentful.accessToken}`
       }
     },
     'gatsby-plugin-react-helmet',

@@ -1,25 +1,27 @@
 import React from 'react'
-import { withPrefix } from 'gatsby-link'
-
 import Footer from '../components/Footer'
 
 class Template extends React.Component {
   render () {
-    const { data, location } = this.props
+    console.log(this.props)
+    const { location, pathContext: { paths } } = this.props
     const { pathname } = location
-    const { markdownRemark } = this.props.data
-    const { frontmatter, html } = markdownRemark
-    const { images } = frontmatter
-    const first = images[0]
-    const remainder = images.slice(1, images.length)
+    const {
+      title,
+      text,
+      headerImage,
+      images
+    } = this.props.data.contentfulCreative
+    const { html } = text.childMarkdownRemark
+
     return (
       <div>
         <div className='mv4 center w-50-ns w-100'>
-          <img src={first} />
+          <img src={headerImage.file.url} />
         </div>
         <div className='center w-75-ns w-100'>
           <div className='tc tracked lato ttu heavy pointer'>
-            {frontmatter.title}
+            {title}
           </div>
           <div
             className='w-50-ns w-100 center tc baskeville lh-copy mt3'
@@ -27,20 +29,13 @@ class Template extends React.Component {
           />
         </div>
         <div className='mv4'>
-          {remainder.map(i => (
-            <div key={i} className='center w-50-ns w-100'>
-              <img className='mb3' src={withPrefix(i)} />
+          {images.map(i => (
+            <div key={i.id} className='center w-50-ns w-100'>
+              <img className='mb3' src={i.file.url} />
             </div>
           ))}
         </div>
-
-        <div>
-
-          <Footer
-            activePath={pathname}
-            creative={data.site.siteMetadata.creative}
-          />
-        </div>
+        <Footer activePath={pathname} creative={paths} />
       </div>
     )
   }
@@ -48,21 +43,23 @@ class Template extends React.Component {
 
 export const pageQuery = graphql`
   query CreativeByPath($path: String!) {
-    site {
-      siteMetadata {
-        creative {
-          name
-          link
-          image
+    contentfulCreative(path: { eq: $path }) {
+      title
+      text {
+        childMarkdownRemark {
+          html
         }
       }
-    }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        path
-        title
-        images
+      images {
+        id
+        file {
+          url
+        }
+      }
+      headerImage {
+        file {
+          url
+        }
       }
     }
   }

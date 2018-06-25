@@ -1,11 +1,3 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
-// You can delete this file if you're not using it
-
 const path = require('path')
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
@@ -14,12 +6,11 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   return graphql(
     `{
-      allMarkdownRemark {
+      allContentfulCreative {
         edges {
           node {
-            frontmatter {
-              path
-            }
+            path
+            title
           }
         }
       }
@@ -29,12 +20,17 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
+    let paths = []
+    result.data.allContentfulCreative.edges.forEach(({ node }) => {
+      let { title, path } = node
+      paths.push({ title, path })
+    })
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allContentfulCreative.edges.forEach(({ node }) => {
       createPage({
-        path: node.frontmatter.path,
+        path: node.path,
         component: creativeTemplate,
-        context: {} // additional data can be passed via context
+        context: { paths, hello: 'World' } // additional data can be passed via context
       })
     })
   })

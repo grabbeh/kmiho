@@ -6,18 +6,18 @@ const Footer = ({ creative, activePath }) => (
   <div>
     <div className='tracked lato w-80 center flex flex-wrap justify-center'>
       {creative.map(c => (
-        <div className='tc mr3 heavy pv1' key={c.name}>
+        <div className='tc mr3 heavy pv1' key={c.title}>
           <Link
             className={cn(
-              activePath === c.link && 'dark-gray',
-              activePath !== c.link && 'gray',
+              activePath === c.path && 'dark-gray',
+              activePath !== c.path && 'gray',
               'hover-black',
               'ttu',
               'link'
             )}
-            to={c.link}
+            to={c.path}
           >
-            {c.name}
+            {c.title}
           </Link>
         </div>
       ))}
