@@ -2,9 +2,6 @@ import React from 'react'
 
 const AboutPage = () => (
   <div className='center dark-gray baskeville mv4 w-80-ns'>
-    <div className='w-80-ns w-100 center'>
-      <img src='/open.jpg' />
-    </div>
     <div className='mt4'>
       <div className='lh-title f3 w-40-ns w-100 fl'>
         I solve problems through design
