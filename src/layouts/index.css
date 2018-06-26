@@ -15,6 +15,10 @@
     height: 0;
   }
 
+  .off-screen {
+    margin-right: -100%;
+  }
+
   .heavy {
     font-weight: 900;
   }
