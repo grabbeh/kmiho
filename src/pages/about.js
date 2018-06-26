@@ -2,10 +2,13 @@ import React from 'react'
 
 const AboutPage = ({ data }) => {
   console.log(data)
-  let { email, linkedin, text, taglineOne, phone } = data.contentfulPerson
+  let { email, linkedin, text, taglineOne, phone, headerImage } = data.contentfulPerson
   let { html } = text.childMarkdownRemark
   return(
     <div className='center dark-gray baskeville mv4 w-80-ns'>
+    <div>
+        <img src={headerImage.file.url} />
+    </div>
     <div className='mt4'>
       <div className='lh-title f3 w-40-ns w-100 fl'>
          {taglineOne}
