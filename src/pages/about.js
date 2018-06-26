@@ -34,8 +34,7 @@ export default AboutPage
 export const query = graphql`
   query personQuery($email: String!) {
     contentfulPerson(email: { eq: "katie@hilodoes.com"}) {
-      edges {
-        node {
+      
           taglineOne
           linkedin
           instagram
@@ -47,7 +46,5 @@ export const query = graphql`
           phone
           email
         }
-      }
-    }
   }
 `
