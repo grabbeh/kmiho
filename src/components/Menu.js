@@ -8,7 +8,6 @@ const Menu = ({ showMenu, close }) => {
       <div onClick={close} className='pa3'>
          <i className='pointer fr fa fa-times dark-gray mt2 fa-lg' />
      </div>
-      </div>
       <div className='f3 mt5 tc'>
         <div onClick={close}>
           <Link
