@@ -16,11 +16,6 @@ const Layout = ({ children, location: { pathname } }) => (
         }
       ]}
     >
-
-      <link
-        rel='stylesheet'
-        href='https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css'
-      />
       <link
         href='https://fonts.googleapis.com/css?family=Libre+Baskerville'
         rel='stylesheet'
