@@ -1,6 +1,7 @@
 import React from 'react'
 
 const AboutPage = ({ data }) => {
+  console.log(data)
   let { email, linkedin, text, taglineOne, phone } = data.contentfulPerson
   let { html } = text.childMarkdownRemark
   return(
