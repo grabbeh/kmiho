@@ -5,7 +5,14 @@
 
   .lato {
     font-family: 'Lato', sans-serif;
-    
+  }
+
+  .w0 {
+    width: 0;
+  }
+
+  .h0 {
+    height: 0;
   }
 
   .heavy {

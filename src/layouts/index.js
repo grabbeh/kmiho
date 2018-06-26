@@ -20,17 +20,11 @@ const Layout = ({ children, location: { pathname } }) => (
         href='https://fonts.googleapis.com/css?family=Libre+Baskerville'
         rel='stylesheet'
       />
-    
+
       <link
         href='https://fonts.googleapis.com/css?family=Lato'
         rel='stylesheet'
       />
-    <link
-         rel='stylesheet'
-         href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'
-         integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp'
-         crossorigin='anonymous'
-    />
     </Helmet>
     <div className='ph5-ns ph4-m mt2 pt4-ns pa3'>
       <Header activePath={pathname} />

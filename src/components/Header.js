@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import cn from 'classnames'
 import Menu from '../components/Menu'
+import FaBars from 'react-icons/lib/fa/bars'
 
 class Header extends Component {
   constructor (props) {
@@ -25,15 +26,17 @@ class Header extends Component {
     const { open, close } = this
     return (
       <div>
-        <Menu close={close} showMenu={showMenu} />
+        <Menu className='h0 w0' close={close} showMenu={showMenu} />
         <div className='mb4 cf w-100 f4 tracked primary-front baskeville bg-white'>
           <Link className='fl link dark-gray' to='/'>
-            Katie Mihailovits
+            <img className='w4' src='/hilo.gif' />
           </Link>
           <div onClick={open} className='dn-ns'>
-            <i className='pointer dark-gray fr fa fa-bars' />
+            <div className='pointer dark-gray fr'>
+              <FaBars />
+            </div>
           </div>
-          <div className='f5 heavy dn dib-ns fr'>
+          <div className='mt3 f5 heavy dn dib-ns fr'>
             <Link
               className={cn(
                 activePath === '/about' && 'dark-gray',

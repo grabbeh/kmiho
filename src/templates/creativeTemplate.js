@@ -17,7 +17,7 @@ class Template extends React.Component {
 
     return (
       <div>
-        <div className='mv4 center w-50-ns w-100'>
+        <div className='mv4 center w-60-ns w-80-m w-100'>
           <Img sizes={headerImage.sizes} />
         </div>
         <div className='center w-75-ns w-100'>
@@ -25,13 +25,13 @@ class Template extends React.Component {
             {title}
           </div>
           <div
-            className='w-50-ns w-100 center tc baskeville lh-copy mt3'
+            className='w-60-ns w-80-m w-100 center tc baskeville lh-copy mt3'
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
         <div className='mv4'>
           {images.map(i => (
-            <div key={i.id} className='center w-50-ns w-100'>
+            <div key={i.id} className='center w-60-ns w-80-m w-100'>
               <Img className='mb3' sizes={i.sizes} />
             </div>
           ))}
