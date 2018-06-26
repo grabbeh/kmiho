@@ -34,7 +34,11 @@ export default AboutPage
 export const query = graphql`
   query personQuery {
     contentfulPerson {
-      
+          headerImage {
+            file {
+                url
+             }
+          }
           taglineOne
           linkedin
           instagram
