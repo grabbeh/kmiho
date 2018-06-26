@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 
 class Template extends React.Component {
   render () {
-    console.log(this.props)
     const { location, pathContext: { paths } } = this.props
     const { pathname } = location
     const {

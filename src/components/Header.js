@@ -27,8 +27,8 @@ class Header extends Component {
     const { open, close } = this
     return (
       <div>
-        <Grow clasName={cn(!showMenu && 'off-screen')} show={showMenu}>
-          <Menu close={close} showMenu={showMenu} />
+        <Grow show={showMenu}>
+          <Menu showMenu={showMenu} close={close} />
         </Grow>
         <div className='mb4 cf w-100 f4 tracked primary-front baskeville bg-white'>
           <Link className='fl link dark-gray' to='/'>
