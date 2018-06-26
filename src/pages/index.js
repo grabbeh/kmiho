@@ -2,10 +2,9 @@ import React from 'react'
 import Footer from '../components/Footer'
 import cn from 'classnames'
 import Link from 'gatsby-link'
-import _ from 'lodash'
 
 const IndexPage = ({ data: { allContentfulCreative: { edges } } }) => {
-  let creative = _.map(edges, i => {
+  let creative = edges.map(i => {
     let { path, title } = i.node
     return { path, title }
   })
