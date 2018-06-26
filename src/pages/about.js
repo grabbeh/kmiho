@@ -32,8 +32,8 @@ const AboutPage = ({ data }) => {
 export default AboutPage
 
 export const query = graphql`
-  query personQuery($email: String!) {
-    contentfulPerson(email: { eq: "katie@hilodoes.com"}) {
+  query personQuery {
+    contentfulPerson {
       
           taglineOne
           linkedin
