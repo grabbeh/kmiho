@@ -10,7 +10,7 @@ const AboutPage = ({ data }) => {
         <img src={headerImage.file.url} />
     </div>
     <div className='mt4'>
-      <div className='lh-title f3 w-40-ns w-100 fl'>
+      <div className='lh-title mt3 f3 w-40-ns w-100 fl'>
          {taglineOne}
       </div>
       <div dangerouslySetInnerHTML={{ __html: html }}className='lh-copy w-60-ns w-100 fl mt0-ns mt3'/>
