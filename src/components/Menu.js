@@ -5,9 +5,9 @@ import FaTimes from 'react-icons/lib/fa/times-circle'
 
 const Menu = ({ showMenu, close }) => {
   return (
-    <Grow show={showMenu}>
+    <div>
       <div onClick={close} className='pa3'>
-        <div className='pointer fr w0 h0 dark-gray mt2 fa-lg'>
+        <div className='pointer fr w0 h0 dark-gray mt3 mr3'>
           <FaTimes />
         </div>
       </div>
@@ -26,8 +26,7 @@ const Menu = ({ showMenu, close }) => {
           </Link>
         </div>
       </div>
-
-    </Grow>
+    </div>
   )
 }
 
