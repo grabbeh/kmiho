@@ -1,14 +1,16 @@
 import React from 'react'
 
-const AboutPage = () => (
-  <div className='center dark-gray baskeville mv4 w-80-ns'>
+const AboutPage = ({ data }) => {
+  let { email, linkedin, text, taglineOne, phone } = data.contentfulPerson
+  let { html } = text.childMarkdownRemark
+  return(
+    <div className='center dark-gray baskeville mv4 w-80-ns'>
     <div className='mt4'>
       <div className='lh-title f3 w-40-ns w-100 fl'>
-        I solve problems through design
+         {taglineOne}
       </div>
-      <div className='lh-copy w-60-ns w-100 fl mt0-ns mt3'>
-        Hi I'm Katie, a freelance graphic designer based in London, specialising in brand, print and digital design. Whether you’re starting out, looking for a full rebrand or just need help with your existing look and feel, I can create impactful design across print and web.
-      </div>
+      <div dangerouslySetInnerHTML={{ __html: html }}className='lh-copy w-60-ns w-100 fl mt0-ns mt3'/>
+
     </div>
     <div className='cf' />
     <div className='mt4'>
@@ -16,13 +18,35 @@ const AboutPage = () => (
         Say "YAMS" or "hi"
       </div>
       <div className='w-60-ns w-100 fl mt0-ns mt3'>
-        <div>hello@hilodoes.com</div>
+        <div>{email}</div>
 
-        <div className='mt4'>07850 164 511</div>
+        <div className='mt4'>{phone}</div>
       </div>
     </div>
     <div className='cf' />
   </div>
-)
+  )
+}
 
 export default AboutPage
+
+export const query = graphql`
+  query personQuery($email: String!) {
+    contentfulPerson(email: { eq: "katie@hilodoes.com"}) {
+      edges {
+        node {
+          taglineOne
+          linkedin
+          instagram
+          text {
+            childMarkdownRemark {
+                html
+             }
+           }
+          phone
+          email
+        }
+      }
+    }
+  }
+`
