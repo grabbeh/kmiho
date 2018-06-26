@@ -50,6 +50,9 @@ export const pageQuery = graphql`
         }
       }
       images {
+        sizes(maxWidth: 1280) {
+          ...GatsbyContentfulSizes
+        }
         id
         file {
           url
