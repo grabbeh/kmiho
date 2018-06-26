@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 
 class Template extends React.Component {
   render () {
+    console.log(this.props)
     const { location, pathContext: { paths } } = this.props
     const { pathname } = location
     const {
