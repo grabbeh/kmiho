@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../components/Footer'
+import Img from 'gatsby-image'
 
 class Template extends React.Component {
   render () {
@@ -17,7 +18,7 @@ class Template extends React.Component {
     return (
       <div>
         <div className='mv4 center w-50-ns w-100'>
-          <img src={headerImage.file.url} />
+          <Img sizes={headerImage.sizes} />
         </div>
         <div className='center w-75-ns w-100'>
           <div className='tc tracked lato ttu heavy pointer'>
@@ -31,7 +32,7 @@ class Template extends React.Component {
         <div className='mv4'>
           {images.map(i => (
             <div key={i.id} className='center w-50-ns w-100'>
-              <img className='mb3' src={i.file.url} />
+              <Img className='mb3' sizes={images.sizes} />
             </div>
           ))}
         </div>
@@ -55,13 +56,10 @@ export const pageQuery = graphql`
           ...GatsbyContentfulSizes
         }
         id
-        file {
-          url
-        }
       }
       headerImage {
-        file {
-          url
+        sizes(maxWidth: 200) {
+          ...GatsbyContentfulSizes
         }
       }
     }
