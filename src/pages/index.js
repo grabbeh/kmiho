@@ -24,7 +24,7 @@ const IndexPage = ({ data: { allContentfulCreative: { edges } } }) => {
                 <img
                   style={{ height: '50vh' }}
                   className='w-100 img'
-                  src={headerImage.file.url}
+                  src={headerImage.sizes}
                 />
               </Link>
             </div>
@@ -47,9 +47,9 @@ export const query = graphql`
           path
           title
           headerImage {
-            file {
-              url
-            }
+            sizes(maxWidth: 1280) {
+              ...GatsbyContentfulSizes
+            } 
           }
         }
       }
