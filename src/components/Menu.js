@@ -7,7 +7,7 @@ const Menu = ({ showMenu, close }) => {
   return (
     <Grow show={showMenu}>
       <div onClick={close} className='pa3'>
-        <div className='pointer fr  dark-gray mt2 fa-lg'>
+        <div className='pointer fr w0 h0 dark-gray mt2 fa-lg'>
           <FaTimes />
         </div>
       </div>
