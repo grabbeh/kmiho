@@ -1,4 +1,5 @@
 import React from 'react'
+import Img from 'gatsby-image'
 
 const AboutPage = ({ data }) => {
   console.log(data)
@@ -7,7 +8,7 @@ const AboutPage = ({ data }) => {
   return(
     <div className='center dark-gray baskeville mv4 w-80-ns'>
     <div>
-        <img src={headerImage.file.url} />
+        <Img sizes={headerImage.sizes} />
     </div>
     <div className='mt4'>
       <div className='lh-title mt3 f3 w-40-ns w-100 fl'>
@@ -38,8 +39,8 @@ export const query = graphql`
   query personQuery {
     contentfulPerson {
           headerImage {
-            file {
-                url
+            sizes(maxWidth: 800) {
+                ...GatsbyContentfulSizes
              }
           }
           taglineOne
