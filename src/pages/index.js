@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from '../components/Footer'
 import cn from 'classnames'
 import Link from 'gatsby-link'
+import Img from 'gatsby-image'
 
 const IndexPage = ({ data: { allContentfulCreative: { edges } } }) => {
   let creative = edges.map(i => {
@@ -21,10 +22,10 @@ const IndexPage = ({ data: { allContentfulCreative: { edges } } }) => {
           >
             <div>
               <Link className='dim' to={path}>
-                <img
+                <Img
                   style={{ height: '50vh' }}
                   className='w-100 img'
-                  src={headerImage.sizes}
+                  sizes={headerImage.sizes}
                 />
               </Link>
             </div>
