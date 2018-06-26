@@ -32,7 +32,7 @@ class Template extends React.Component {
         <div className='mv4'>
           {images.map(i => (
             <div key={i.id} className='center w-50-ns w-100'>
-              <Img className='mb3' sizes={images.sizes} />
+              <Img className='mb3' sizes={i.sizes} />
             </div>
           ))}
         </div>
