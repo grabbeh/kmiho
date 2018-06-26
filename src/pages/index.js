@@ -48,7 +48,7 @@ export const query = graphql`
           path
           title
           headerImage {
-            sizes(maxWidth: 1280) {
+            sizes(maxWidth: 800) {
               ...GatsbyContentfulSizes
             } 
           }
