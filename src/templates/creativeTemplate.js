@@ -52,13 +52,13 @@ export const pageQuery = graphql`
         }
       }
       images {
-        sizes(maxWidth: 200) {
+        sizes(maxWidth: 800) {
           ...GatsbyContentfulSizes
         }
         id
       }
       headerImage {
-        sizes(maxWidth: 200) {
+        sizes(maxWidth: 800) {
           ...GatsbyContentfulSizes
         }
       }
