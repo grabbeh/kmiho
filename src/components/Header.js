@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import cn from 'classnames'
 import Menu from '../components/Menu'
 import Grow from '../components/Grow'
-import FaBars from 'react-icons/lib/fa/bars'
+import MdMenu from 'react-icons/lib/md/menu'
 
 class Header extends Component {
   constructor (props) {
@@ -36,7 +36,7 @@ class Header extends Component {
           </Link>
           <div onClick={open} className='dn-ns'>
             <div className='pointer dark-gray fr mt3 mr2'>
-              <FaBars />
+              <MdMenu />
             </div>
           </div>
           <div className='mt3 f5 heavy dn dib-ns fr'>
