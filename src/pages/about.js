@@ -44,7 +44,7 @@ const AboutPage = ({ data }) => {
         <div className='cf' />
 
       </div>
-      <SocialFooter />
+      <SocialFooter instagram={instagram} linkedin={linkedin} />
     </div>
   )
 }
