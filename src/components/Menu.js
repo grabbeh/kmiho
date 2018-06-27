@@ -11,15 +11,6 @@ const Menu = ({ showMenu, close }) => {
               <MdClose size={24} />
             </div>
       </div>
-      <div className='f3 mt5 tc'>
-        <div onClick={close}>
-          <Link
-            className='tracked hover-black dark-gray lato ttu link'
-            to='/about'
-          >
-            About
-          </Link>
-        </div>
         <div className='mt3' onClick={close}>
           <Link className='tracked hover-black dark-gray lato ttu link' to='/'>
             Work
