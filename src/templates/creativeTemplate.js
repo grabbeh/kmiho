@@ -24,11 +24,11 @@ class Template extends React.Component {
             {title}
           </div>
           <div
-            className='w-60-ns w-80-m w-100 center tc baskeville lh-copy mt3'
+            className='w-60-ns w-80-m w-100 center tc baskeville lh-copy mv4'
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
-        <div className='mv4'>
+        <div className='mb4'>
           {images.map(i => (
             <div key={i.id} className='center w-60-ns w-80-m w-100'>
               <Img className='mb3' sizes={i.sizes} />
