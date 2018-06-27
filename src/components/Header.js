@@ -4,7 +4,7 @@ import cn from 'classnames'
 import Menu from '../components/Menu'
 import Grow from '../components/Grow'
 import MdMenu from 'react-icons/lib/md/menu'
-import MdCloseMenu from 'react-icons/lib/md/close'
+import MdClose from 'react-icons/lib/md/close'
 
 class Header extends Component {
   constructor (props) {
