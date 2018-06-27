@@ -2,16 +2,15 @@ import React from 'react'
 import Footer from '../components/Footer'
 import Img from 'gatsby-image'
 
-class Template extends React.Component {
-  render () {
-    const { location, pathContext: { paths } } = this.props
+const Template = (props) => {
+    const { location, pathContext: { paths } } = props
     const { pathname } = location
     const {
       title,
       text,
       headerImage,
       images
-    } = this.props.data.contentfulCreative
+    } = props.data.contentfulCreative
     const { html } = text.childMarkdownRemark
 
     return (
@@ -38,7 +37,6 @@ class Template extends React.Component {
         <Footer activePath={pathname} creative={paths} />
       </div>
     )
-  }
 }
 
 export const pageQuery = graphql`
