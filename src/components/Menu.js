@@ -7,8 +7,8 @@ const Menu = ({ showMenu, close }) => {
   return (
     <div className={cn(!showMenu && 'dn')}>
       <div onClick={close} className='pa3'>
-        <div className='pointer fr w0 h0 dark-gray mt3 mr3'>
-          <MdClose />
+        <div className='pointer fr w0 h0 dark-gray mt4 mr3'>
+          <MdClose size={24} />
         </div>
       </div>
       <div className='f3 mt5 tc'>
