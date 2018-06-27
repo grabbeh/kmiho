@@ -36,16 +36,16 @@ class Header extends Component {
             <img className='w4' src='/hilo.gif' />
           </Link>
       {showMenu ? 
-          <div onClick={open} className='dn-ns'>
+          <div onClick={close} className='dn-ns'>
+          <div className='pointer dark-gray fr mt3 mr2'>
+              <MdClose size={24} />
+            </div>
+         </div>
+      : <div onClick={open} className='dn-ns'>
             <div className='pointer dark-gray fr mt3 mr2'>
               <MdMenu size={24} />
             </div>
           </div>
-      : <div onClick={close} className='dn-ns'>
-          <div className='pointer dark-gray fr mt3 mr2'>
-              <MdClose size={24} />
-            </div>
-      </div>
       }
           <div className='mt3 f5 heavy dn dib-ns fr'>
             <Link
