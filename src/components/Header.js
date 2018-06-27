@@ -36,7 +36,7 @@ class Header extends Component {
           </Link>
           <div onClick={open} className='dn-ns'>
             <div className='pointer dark-gray fr mt3 mr2'>
-              <MdMenu />
+              <MdMenu size={24} />
             </div>
           </div>
           <div className='mt3 f5 heavy dn dib-ns fr'>
