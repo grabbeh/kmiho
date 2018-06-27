@@ -6,11 +6,6 @@ import MdClose from 'react-icons/lib/md/close'
 const Menu = ({ showMenu, close }) => {
   return (
     <div className={cn(!showMenu && 'dn')}>
-       <div onClick={close} className='dn-ns'>
-          <div className='pointer dark-gray fr'>
-              <MdClose size={24} />
-            </div>
-      </div>
       <div className='f3 mt5 tc'>
         <div onClick={close}>
           <Link
