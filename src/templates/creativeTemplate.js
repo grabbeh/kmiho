@@ -19,7 +19,7 @@ class Template extends React.Component {
         <div className='mv4 center w-60-ns w-80-m w-100'>
           <Img sizes={headerImage.sizes} />
         </div>
-        <div className='center w-75-ns w-100'>
+        <div className='center mv4 w-75-ns w-100'>
           <div className='tc tracked lato ttu heavy pointer'>
             {title}
           </div>
