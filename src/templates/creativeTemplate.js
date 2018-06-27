@@ -27,10 +27,10 @@ const Template = (props) => {
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
-        <div className='mb4'>
+        <div className='mb4 center w-60-ns w-80-m w-100'>
           {images.map(i => (
-            <div key={i.id} className='center w-60-ns w-80-m w-100'>
-              <Img className='mb4' sizes={i.sizes} />
+            <div key={i.id} className='mb4'>
+              <Img sizes={i.sizes} />
             </div>
           ))}
         </div>
