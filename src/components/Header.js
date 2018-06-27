@@ -52,7 +52,7 @@ class Header extends Component {
               )}
               to='/about'
             >
-              Contact
+              About
             </Link>
             <Link
               className={cn(
