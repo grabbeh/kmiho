@@ -2,14 +2,9 @@ import React from 'react'
 import Link from 'gatsby-link'
 import cn from 'classnames'
 
-const Menu = ({ showMenu }) => {
+const Menu = ({ showMenu, close }) => {
   return (
     <div className={cn(!showMenu && 'dn', 'mt4')}>
-      <div onClick={close} className='pa3'>
-        <div className='pointer fr w0 h0 dark-gray mt4 mr3'>
-          <MdClose size={24} />
-        </div>
-      </div>
       <div className='f3 mt5 tc'>
         <div onClick={close}>
           <Link
