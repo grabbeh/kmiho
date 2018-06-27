@@ -30,7 +30,7 @@ const Template = (props) => {
         <div className='mb4'>
           {images.map(i => (
             <div key={i.id} className='center w-60-ns w-80-m w-100'>
-              <Img className='mb3' sizes={i.sizes} />
+              <Img className='mb4' sizes={i.sizes} />
             </div>
           ))}
         </div>
