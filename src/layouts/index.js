@@ -16,15 +16,6 @@ const Layout = ({ children, location: { pathname } }) => (
         }
       ]}
     >
-      <link
-        href='https://fonts.googleapis.com/css?family=Libre+Baskerville'
-        rel='stylesheet'
-      />
-
-      <link
-        href='https://fonts.googleapis.com/css?family=Lato'
-        rel='stylesheet'
-      />
     </Helmet>
     <div className='ph5-ns ph4-m mt2 pt4-ns pa3'>
       <Header activePath={pathname} />
