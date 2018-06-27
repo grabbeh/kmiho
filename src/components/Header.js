@@ -34,9 +34,9 @@ class Header extends Component {
           <Link className='fl link dark-gray' to='/'>
             <img className='w4' src='/hilo.gif' />
           </Link>
-        <div onClick={close} className='dn-ns'>
+        <div onClick={open} className='dn-ns'>
           <div className='pointer dark-gray fr mt3 mr2'>
-              <MdClose size={24} />
+              <MdMenu size={24} />
             </div>
          </div>
           <div className='mt3 f5 heavy dn dib-ns fr'>
