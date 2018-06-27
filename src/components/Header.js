@@ -29,7 +29,7 @@ class Header extends Component {
     return (
       <div>
         <Grow show={showMenu}>
-          <Menu showMenu={showMenu} close={close} />
+          <Menu className="mt5" showMenu={showMenu} close={close} />
         </Grow>
         <div className='mb4 cf w-100 f4 tracked primary-front baskeville bg-white'>
           <Link className='fl link dark-gray' to='/'>
