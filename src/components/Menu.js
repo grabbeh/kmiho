@@ -1,11 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import cn from 'classnames'
-import MdClose from 'react-icons/lib/md/close'
 
-const Menu = ({ showMenu, close }) => {
+const Menu = ({ showMenu }) => {
   return (
-    <div className={cn(!showMenu && 'dn')}>
+    <div className={cn(!showMenu && 'dn', 'mt4')}>
       <div onClick={close} className='pa3'>
         <div className='pointer fr w0 h0 dark-gray mt4 mr3'>
           <MdClose size={24} />
