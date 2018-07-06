@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Grow = styled.div.attrs({
-  className: 'secondary-front bg-white fixed top-0 right-0'
+  className: 'secondary-front bg-white fixed mt5 right-0'
 })`
 opacity: ${props => (props.show ? 1 : 0)}
 width: ${props => (props.show ? '100%' : 0)};

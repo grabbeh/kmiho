@@ -33,18 +33,17 @@ const AboutPage = ({ data }) => {
         <div className='cf' />
         <div className='mt4'>
           <div className='f3 w-40-ns w-100 fl'>
-            Say "YAMS" or "hi"
+            Say hi
           </div>
           <div className='w-60-ns w-100 fl mt0-ns mt3'>
-            <div>{email}</div>
-
+            <a href={`mailto:${email}`}>katie@hilodoes.com</a>
             <div className='mt4'>{phone}</div>
           </div>
         </div>
         <div className='cf' />
 
       </div>
-      <SocialFooter />
+      <SocialFooter instagram={instagram} linkedin={linkedin} />
     </div>
   )
 }
@@ -56,7 +55,7 @@ export const query = graphql`
     contentfulPerson {
           headerImage {
             sizes(maxWidth: 800) {
-                ...GatsbyContentfulSizes
+                ...GatsbyContentfulSizes_noBase64
              }
           }
           taglineOne

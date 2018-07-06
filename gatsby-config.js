@@ -12,9 +12,20 @@ module.exports = {
         accessToken: `${process.env.ACCESS_TOKEN}`
       }
     },
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
      `gatsby-transformer-sharp`,
-     `gatsby-plugin-sharp`
+     `gatsby-plugin-sharp`,
+   
+     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `libre baskerville`,
+          `lato` 
+        ]
+      }
+    },
+    `gatsby-plugin-netlify`,
   ]
 }

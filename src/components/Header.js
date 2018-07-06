@@ -3,7 +3,8 @@ import Link from 'gatsby-link'
 import cn from 'classnames'
 import Menu from '../components/Menu'
 import Grow from '../components/Grow'
-import FaBars from 'react-icons/lib/fa/bars'
+import MdMenu from 'react-icons/lib/md/menu'
+import MdClose from 'react-icons/lib/md/close'
 
 class Header extends Component {
   constructor (props) {
@@ -34,11 +35,18 @@ class Header extends Component {
           <Link className='fl link dark-gray' to='/'>
             <img className='w4' src='/hilo.gif' />
           </Link>
-          <div onClick={open} className='dn-ns'>
+        { showMenu ? 
+          <div onClick={close} className='dn-ns'>
+             <div className='pointer dark-gray fr mt3 mr2'>
+             <MdClose size={24} />
+             </div>
+           </div>
+         : <div onClick={open} className='dn-ns'>
             <div className='pointer dark-gray fr mt3 mr2'>
-              <FaBars />
-            </div>
-          </div>
+             <MdMenu size={24} />
+             </div>
+           </div>
+          }
           <div className='mt3 f5 heavy dn dib-ns fr'>
             <Link
               className={cn(
@@ -52,7 +60,7 @@ class Header extends Component {
               )}
               to='/about'
             >
-              Contact
+              About
             </Link>
             <Link
               className={cn(
