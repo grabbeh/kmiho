@@ -17,7 +17,11 @@ class Template extends React.Component {
     return (
       <div>
         <div className='mv4 center w-60-ns w-80-m w-100'>
-          <Img sizes={headerImage.sizes} />
+          <Img
+            fadeIn={false}
+            backgroundColor={'#fafafa'}
+            sizes={headerImage.sizes}
+          />
         </div>
         <div className='center w-75-ns w-100'>
           <div className='tc tracked lato ttu heavy pointer'>
@@ -31,7 +35,12 @@ class Template extends React.Component {
         <div className='mv4'>
           {images.map(i => (
             <div key={i.id} className='center w-60-ns w-80-m w-100'>
-              <Img className='mb3' sizes={i.sizes} />
+              <Img
+                fadeIn={false}
+                backgroundColor={'#fafafa'}
+                className='mb4'
+                sizes={i.sizes}
+              />
             </div>
           ))}
         </div>
@@ -52,13 +61,13 @@ export const pageQuery = graphql`
       }
       images {
         sizes(maxWidth: 800) {
-          ...GatsbyContentfulSizes
+          ...GatsbyContentfulSizes_noBase64
         }
         id
       }
       headerImage {
         sizes(maxWidth: 800) {
-          ...GatsbyContentfulSizes
+          ...GatsbyContentfulSizes_noBase64
         }
       }
     }

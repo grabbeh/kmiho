@@ -23,6 +23,8 @@ const IndexPage = ({ data: { allContentfulCreative: { edges } } }) => {
             <div>
               <Link className='dim' to={path}>
                 <Img
+                  fadeIn={false}
+                  backgroundColor={'#fafafa'}
                   style={{ height: '50vh' }}
                   className='w-100 img'
                   sizes={headerImage.sizes}
@@ -49,7 +51,7 @@ export const query = graphql`
           title
           headerImage {
             sizes(maxWidth: 800) {
-              ...GatsbyContentfulSizes
+              ...GatsbyContentfulSizes_noBase64
             } 
           }
         }
