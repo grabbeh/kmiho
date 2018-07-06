@@ -24,7 +24,7 @@ const Template = props => {
       </div>
       <div className='mb4 center w-60-ns w-80-m w-100'>
         {images.map(i => (
-          <div key={i.id} className='center w-60-ns w-80-m w-100'>
+          <div key={i.id}>
             <Img backgroundColor={'#fafafa'} className='mb4' sizes={i.sizes} />
           </div>
         ))}
