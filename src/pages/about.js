@@ -18,7 +18,7 @@ const AboutPage = ({ data }) => {
     <div>
       <div className='center dark-gray baskeville mv4 w-80-ns'>
         <div>
-          <Img sizes={headerImage.sizes} />
+          <Img backgroundColor={'#fafafa'} sizes={headerImage.sizes} />
         </div>
         <div className='mt4'>
           <div className='lh-title mt3 f3 w-40-ns w-100 fl'>

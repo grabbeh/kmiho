@@ -23,7 +23,6 @@ const IndexPage = ({ data: { allContentfulCreative: { edges } } }) => {
             <div>
               <Link className='dim' to={path}>
                 <Img
-                  fadeIn={false}
                   backgroundColor={'#fafafa'}
                   style={{ height: '50vh' }}
                   className='w-100 img'
