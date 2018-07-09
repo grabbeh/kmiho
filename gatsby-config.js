@@ -14,18 +14,15 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
-     `gatsby-transformer-sharp`,
-     `gatsby-plugin-sharp`,
-   
-     {
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `libre baskerville`,
-          `lato` 
-        ]
+        fonts: [`libre baskerville`, `lato`]
       }
     },
-    `gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify`
   ]
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import cn from 'classnames'
-import MdClose from 'react-icons/lib/md/close'
 
 const Menu = ({ showMenu, close }) => {
   return (
