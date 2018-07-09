@@ -17,10 +17,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
-    {
-      resolve: `gatsby-plugin-google-fonts`,
+     {
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [`libre baskerville`, `lato`]
+        google: {
+          families: ['Libre Baskerville', 'Lato']
+        }
       }
     },
     `gatsby-plugin-netlify`
