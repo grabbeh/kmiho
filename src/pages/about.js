@@ -36,7 +36,7 @@ const AboutPage = ({ data }) => {
             Say hi
           </div>
           <div className='w-60-ns w-100 fl mt0-ns mt3'>
-            <a href={`mailto:${email}`}>katie@hilodoes.com</a>
+            <a className='dark-gray' href={`mailto:${email}`}>katie@hilodoes.com</a>
             <div className='mt4'>{phone}</div>
           </div>
         </div>
