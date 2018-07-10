@@ -7,6 +7,10 @@
     font-family: 'Lato', sans-serif;
   }
 
+a {
+ outline: 0; 
+}
+
 a:active, a:focus {
   outline: 0;
   border: none;
