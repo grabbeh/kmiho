@@ -64,6 +64,7 @@ class Header extends Component {
               About
             </Link>
             <Link
+              style={{ outline: 0}}
               className={cn(
                 activePath === '/' && 'dark-gray',
                 activePath !== '/' && 'gray',
