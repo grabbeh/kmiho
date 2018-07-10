@@ -32,7 +32,7 @@ class Header extends Component {
           <Menu showMenu={showMenu} close={close} />
         </Grow>
         <div className='mb4 cf w-100 f4 tracked primary-front baskeville bg-white'>
-          <Link className='fl link dark-gray' to='/'>
+          <Link style={{ outline: 0 }} className='fl link dark-gray' to='/'>
             <img className='w4' src='/hilo.gif' />
           </Link>
         { showMenu ? 
@@ -49,6 +49,7 @@ class Header extends Component {
           }
           <div className='mt3 f5 heavy dn dib-ns fr'>
             <Link
+              style={{ outline: 0}}
               className={cn(
                 activePath === '/about' && 'dark-gray',
                 activePath !== '/about' && 'gray',
