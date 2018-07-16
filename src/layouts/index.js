@@ -3,11 +3,9 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/Header'
 import './index.css'
-import favicon from '../favicon.png'
 
 const Layout = ({ children, location: { pathname } }) => (
   <div>
-    <link rel='shortcut icon' type='image/png' href='./favicon.png' />
     <Helmet
       meta={[
         { name: 'description', content: 'Graphic designer' },
