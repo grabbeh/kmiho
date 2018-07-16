@@ -7,7 +7,7 @@ import favicon from '../favicon.png'
 
 const Layout = ({ children, location: { pathname } }) => (
   <div>
-    <link rel='shortcut icon' type='image/png' href={favicon} />
+    <link rel='shortcut icon' type='image/png' href='./favicon.png' />
     <Helmet
       meta={[
         { name: 'description', content: 'Graphic designer' },
