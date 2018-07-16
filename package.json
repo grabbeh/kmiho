@@ -9,6 +9,7 @@
     "gatsby": "^1.9.273",
     "gatsby-image": "1.0.54",
     "gatsby-link": "^1.6.40",
+    "gatsby-plugin-favicon": "^2.1.1",
     "gatsby-plugin-netlify": "^1.0.21",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sharp": "1.6.48",
@@ -28,11 +29,6 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "serve public/"
-  },
-  "devDependencies": {
-    "prettier": "^1.12.0"
   }
 }
