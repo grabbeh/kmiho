@@ -3,7 +3,6 @@ if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
 }
 
 module.exports = {
-  pathPrefix: `/public`,
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
