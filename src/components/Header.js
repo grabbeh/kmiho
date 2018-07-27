@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import cn from 'classnames'
 import Menu from '../components/Menu'
 import Grow from '../components/Grow'
@@ -33,23 +33,22 @@ class Header extends Component {
         </Grow>
         <div className='mb4 cf w-100 f4 tracked primary-front baskeville bg-white'>
           <Link style={{ outline: 0 }} className='fl link dark-gray' to='/'>
-            <img className='w4' src='/hilo.gif' />
+            <img alt='header-text' className='w4' src='/hilo.gif' />
           </Link>
-        { showMenu ? 
-          <div onClick={close} className='dn-ns'>
-             <div className='pointer dark-gray fr mt3 mr2'>
-             <MdClose size={24} />
-             </div>
-           </div>
-         : <div onClick={open} className='dn-ns'>
-            <div className='pointer dark-gray fr mt3 mr2'>
-             <MdMenu size={24} />
-             </div>
-           </div>
-          }
+          {showMenu
+            ? <div onClick={close} className='dn-ns'>
+              <div className='pointer dark-gray fr mt3 mr2'>
+                <MdClose size={24} />
+              </div>
+            </div>
+            : <div onClick={open} className='dn-ns'>
+              <div className='pointer dark-gray fr mt3 mr2'>
+                <MdMenu size={24} />
+              </div>
+            </div>}
           <div className='mt3 f5 heavy dn dib-ns fr'>
             <Link
-              style={{ outline: 0}}
+              style={{ outline: 0 }}
               className={cn(
                 activePath === '/about' && 'dark-gray',
                 activePath !== '/about' && 'gray',
@@ -64,7 +63,7 @@ class Header extends Component {
               About
             </Link>
             <Link
-              style={{ outline: 0}}
+              style={{ outline: 0 }}
               className={cn(
                 activePath === '/' && 'dark-gray',
                 activePath !== '/' && 'gray',

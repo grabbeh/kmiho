@@ -1,56 +1,63 @@
 import React from 'react'
 import Footer from '../components/Footer'
 import cn from 'classnames'
-import Link from 'gatsby-link'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import Layout from '../components/Layout'
 
-const IndexPage = ({ data: { allContentfulCreative: { edges } } }) => {
+const IndexPage = ({
+  data: { allContentfulCreative: { edges } },
+  location
+}) => {
+  console.log(edges)
   let creative = edges.map(i => {
     let { path, title } = i.node
     return { path, title }
   })
   return (
-    <div>
-      {edges.map(({ node: { title, path, headerImage } }, index) => (
-        <div key={title} className='w-50-ns w-100 fl overflow-hidden'>
-          <div
-            className={cn(
-              (index + 1) % 2 === 0 && 'mr0-ns',
-              (index + 1) % 2 !== 0 && 'mr4-ns',
-              'mb4'
-            )}
-          >
-            <div>
-              <Link className='dim' to={path}>
-                <Img
-                  backgroundColor={'#fafafa'}
-                  style={{ height: '50vh' }}
-                  className='w-100 img'
-                  sizes={headerImage.sizes}
-                />
-              </Link>
+    <Layout location={location}>
+      <div>
+        {edges.map(({ node: { title, path, headerImage } }, index) => (
+          <div key={title} className='w-50-ns w-100 fl overflow-hidden'>
+            <div
+              className={cn(
+                (index + 1) % 2 === 0 && 'mr0-ns',
+                (index + 1) % 2 !== 0 && 'mr4-ns',
+                'mb4'
+              )}
+            >
+              <div>
+                <Link className='dim' to={path}>
+                  <Img
+                    backgroundColor={'#fafafa'}
+                    style={{ height: '50vh' }}
+                    className='w-100 img'
+                    fluid={headerImage.fluid}
+                  />
+                </Link>
+              </div>
+              <div className='cf' />
             </div>
-            <div className='cf' />
           </div>
-        </div>
-      ))}
-      <Footer creative={creative} />
-    </div>
+        ))}
+        <Footer creative={creative} />
+      </div>
+    </Layout>
   )
 }
 
 export default IndexPage
 
 export const query = graphql`
-  query creativeQuery {
+   {
     allContentfulCreative {
       edges {
         node {
           path
           title
           headerImage {
-            sizes(maxWidth: 800) {
-              ...GatsbyContentfulSizes_noBase64
+            fluid(maxWidth: 800) {
+              ...GatsbyContentfulFluid_noBase64
             } 
           }
         }
